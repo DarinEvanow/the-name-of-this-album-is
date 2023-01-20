@@ -1,6 +1,7 @@
 import { env } from '$env/dynamic/private';
 import { NOTION_KEY, NOTION_DATABASE_ID } from '$lib/Env';
-import { Client } from '@notionhq/client';
+import { Client, isFullPage } from '@notionhq/client';
+import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 let notionKey: string;
 let notionDatabaseId: string;
@@ -20,9 +21,11 @@ export async function load() {
 		database_id: notionDatabaseId
 	});
 
+	const fullPages: PageObjectResponse[] = response.results.filter(isFullPage);
+
 	return {
 		album: {
-			title: `${response.results[0].properties.album_name.rich_text[0].plain_text}`
+			title: `${fullPages[0].properties.album_name.rich_text[0].plain_text}`
 		}
 	};
 }
