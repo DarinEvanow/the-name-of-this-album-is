@@ -1,9 +1,9 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 'use strict';
-var grpc = require('grpc');
-var generation_pb = require('./generation_pb.js');
-var tensors_pb = require('./tensors_pb.js');
+import grpc from 'grpc';
+import generation_pb from './generation_pb.js';
+import * as tensors_pb from './tensors_pb.js';
 
 function serialize_gooseai_Answer(arg) {
 	if (!(arg instanceof generation_pb.Answer)) {

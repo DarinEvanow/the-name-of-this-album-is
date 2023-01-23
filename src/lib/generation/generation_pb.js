@@ -11,7 +11,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-var jspb = require('google-protobuf');
+import jspb from 'google-protobuf';
 var goog = jspb;
 var global = function () {
 	if (this) {
@@ -29,7 +29,7 @@ var global = function () {
 	return Function('return this')();
 }.call(null);
 
-var tensors_pb = require('./tensors_pb.js');
+import tensors_pb from './tensors_pb.js';
 goog.object.extend(proto, tensors_pb);
 goog.exportSymbol('proto.gooseai.Action', null, global);
 goog.exportSymbol('proto.gooseai.Answer', null, global);
@@ -7732,4 +7732,4 @@ proto.gooseai.StageAction = {
 	STAGE_ACTION_RETURN: 2
 };
 
-goog.object.extend(exports, proto.gooseai);
+export default proto.gooseai;

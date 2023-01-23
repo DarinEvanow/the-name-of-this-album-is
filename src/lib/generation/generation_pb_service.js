@@ -1,8 +1,8 @@
 // package: gooseai
 // file: generation.proto
 
-var generation_pb = require('./generation_pb');
-var grpc = require('@improbable-eng/grpc-web').grpc;
+import generation_pb from './generation_pb';
+import { grpc } from '@improbable-eng/grpc-web';
 
 var GenerationService = (function () {
 	function GenerationService() {}
@@ -27,8 +27,6 @@ GenerationService.ChainGenerate = {
 	requestType: generation_pb.ChainRequest,
 	responseType: generation_pb.Answer
 };
-
-exports.GenerationService = GenerationService;
 
 function GenerationServiceClient(serviceHost, options) {
 	this.serviceHost = serviceHost;
@@ -113,4 +111,4 @@ GenerationServiceClient.prototype.chainGenerate = function chainGenerate(request
 	};
 };
 
-exports.GenerationServiceClient = GenerationServiceClient;
+export { GenerationServiceClient };
