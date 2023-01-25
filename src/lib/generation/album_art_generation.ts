@@ -1,7 +1,8 @@
 import { GenerationServiceClient } from '$lib/generation/generation_pb_service';
 import Generation from '$lib/generation/generation_pb';
-import { grpc } from '@improbable-eng/grpc-web';
 import { NodeHttpTransport } from '@improbable-eng/grpc-web-node-http-transport';
+import pkg from '@improbable-eng/grpc-web';
+const { grpc } = pkg;
 
 grpc.setDefaultTransport(NodeHttpTransport());
 

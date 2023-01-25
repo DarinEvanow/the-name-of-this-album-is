@@ -2,7 +2,8 @@
 // file: generation.proto
 
 import generation_pb from './generation_pb';
-import { grpc } from '@improbable-eng/grpc-web';
+import pkg from '@improbable-eng/grpc-web';
+const { grpc } = pkg;
 
 var GenerationService = (function () {
 	function GenerationService() {}
